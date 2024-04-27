@@ -1,0 +1,158 @@
+.container {
+  background-color: #cadcfc;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .contact-container {
+    max-width: 500px;
+    margin: 100px 0;
+    width: 50%;
+    margin-bottom: 200px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin: 50px 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    form {
+      .flex {
+        flex-direction: column;
+      }
+
+      gap: 20px;
+      display: grid;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        transition: border-color 0.3s ease;
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+      .text-red-400 {
+        color: #e53e3e;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px; // Rounded rectangle
+        font-weight: bold;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #98a1f5fd, #00246b);
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        align-self: flex-start; // Align to the left
+
+        &:hover {
+          background-color: #357ae8;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+
+      .animate-spin {
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+
+  .contact-image {
+
+    margin-top: 100px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 40px;
+      margin-top: 0%;
+    }
+
+    img {
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    /* code block padding top bottom */
+    .code-block {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    /* social icons code */
+    .t-social {
+      display: block;
+      margin: 0 auto;
+      padding-top: 5px;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    .t-social li {
+      display: inline-block;
+      margin: 10px;
+      line-height: 100% !important;
+    }
+
+    .t-social li i {
+      font-size: 60px;
+      margin: 0 20px;
+    }
+
+
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ::ng-deep {
+
+//   .footer {
+//     position: absolute;
+//     bottom: 0%;
+//     width: 100%;
+
+//     @media screen and (max-width: 768px) {
+//       position: relative;
+//     }
+
+//   }
+// }

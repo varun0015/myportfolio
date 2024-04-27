@@ -1,0 +1,215 @@
+.main-home {
+    text-align: center;
+    padding: 50px;
+    background-color: #CADCFC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 50px 20px;
+    }
+
+
+    .thumb-container {
+
+        overflow: hidden;
+        border-radius: 2px;
+    }
+
+    .thumb-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .image-container {
+        flex: 1;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 320px;
+            // border: 1px solid #f1f1f1;
+            perspective: 1000px;
+        }
+
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+
+        .flip-card-front {
+            background-color: transparent;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: transparent;
+            color: white;
+            width: 300px;
+            height: 320px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transform: rotateY(180deg);
+
+        }
+    }
+
+    .text-container {
+        flex: 2;
+        padding: 0 20px;
+    }
+
+    .text-container h1 {
+        font-size: 2.5rem;
+        color: #333;
+    }
+
+    .text-container p {
+        font-size: 1.5rem;
+        color: #555;
+    }
+
+    .skills-section {
+        .my-skills {
+            font-size: 25px;
+            color: #00246B;
+            text-decoration: underline;
+
+        }
+
+        // }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .skill-card {
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            // border: 1px solid #ccc;
+            // border-radius: 5px;
+            // background-color: #f9f9f9;
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                margin: 0%;
+                padding: 05px 20px;
+            }
+        }
+
+        .skill-details {
+            text-align: center;
+        }
+
+        .skill-details h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .skill-slider {
+            width: 100%;
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background-color: #4caf50;
+        }
+    }
+
+
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        font-family: "Roboto" sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .example-card {
+        max-width: 300px;
+        transition: transform 0.6s ease;
+        position: relative;
+    }
+
+    .example-card:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    .example-header-image {
+        background-size: cover;
+    }
+
+    button {
+        background-color: #00246B;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+}

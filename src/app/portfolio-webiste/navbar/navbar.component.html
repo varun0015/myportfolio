@@ -1,0 +1,10 @@
+<div class="navbar">
+    <div (click)="navigateToHome()" class="logo">
+        <a >Home</a>
+    </div>
+    <ul class="nav-links">
+        <li *ngFor="let link of links">
+            <a (click)="navigate(link)">{{ link }}</a>
+        </li>
+    </ul>
+</div>

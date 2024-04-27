@@ -1,0 +1,15 @@
+p {
+    color: #98a1f5fd;
+}
+
+.btn {
+    background-color: #00246B;
+    color: #ffffff;
+    width: 50%;
+}
+
+::ng-deep {
+    .mat-mdc-dialog-actions {
+        justify-content: center;
+    }
+}

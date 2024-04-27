@@ -1,0 +1,31 @@
+.cookies-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; 
+    transform: translateY(0); 
+  }
+  
+  .cookies-bar.closed {
+    transform: translateY(100%); 
+  }
+  
+  button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #00246b;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #357ae8;
+    }
+  }
+  
