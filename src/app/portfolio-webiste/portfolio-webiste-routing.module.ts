@@ -7,12 +7,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'navbar',component: NavbarComponent},
   {path: 'about-us',component: AboutComponent},
   {path: 'contact-us',component: ContactComponent},
   {path: 'footer',component: FooterComponent},
-  {path: 'home',component: HomeComponent},
-
+  {path: 'home',component: HomeComponent}
 ];
 
 @NgModule({
