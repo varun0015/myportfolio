@@ -1,9 +1,33 @@
 <header class="hero">
-  <div class="container hero-content">
+  <div class="container header-bar">
+    <!-- <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#getInTouch">Get In Touch</a>
+    </nav> -->
+    <nav class="nav-links">
+      <a href="#home" [ngClass]="{'active': activeSection === 'home'}" id="nav-home"
+        (click)="activeSection = 'home'">Home</a>
+
+      <a href="#projects" [ngClass]="{'active': activeSection === 'projects'}" id="nav-projects"
+        (click)="activeSection = 'projects'">Projects</a>
+
+      <a href="#skills" [ngClass]="{'active': activeSection === 'skills'}" id="nav-skills"
+        (click)="activeSection = 'skills'">Skills</a>
+
+      <a href="#experience" [ngClass]="{'active': activeSection === 'experience'}" id="nav-experience"
+        (click)="activeSection = 'experience'">Experience</a>
+
+      <a href="#getInTouch" [ngClass]="{'active': activeSection === 'getInTouch'}" id="nav-getInTouch"
+        (click)="activeSection = 'getInTouch'">Get In Touch</a>
+    </nav>
+  </div>
+
+  <!-- <div id="home" class="container hero-content">
+
     <div class="hero-grid">
-      <div class="profile-pic">
-        <img src="assets/photo.jpeg" alt="Varun Kumar M V" />
-      </div>
 
       <div class="hero-text">
         <h1>{{name}}</h1>
@@ -18,26 +42,76 @@
         </div>
       </div>
 
+      <div class="profile-pic">
+        <img src="assets/photo.jpeg" alt="Varun Kumar M V" />
+      </div>
+
+
+
     </div>
-  </div>
+  </div> -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-grid">
+
+        <div class="hero-text">
+          <p class="greeting">Hi, I'm</p>
+          <h1>{{name}}</h1>
+          <p class="title">{{title}}</p>
+
+          <p class="summary-innovative">
+            I architect **enterprise-grade solutions** using <span class="highlight-tech">Angular & Flutter</span>,
+            specializing in:
+            <span class="typing-effect">
+              Scalable Clean Architecture | Secure Transaction Modules | High-Traffic Optimization
+            </span>
+          </p>
+
+          <div class="links">
+            <a [href]="github" target="_blank" class="btn primary-btn">GitHub</a>
+            <a [href]="linkedin" target="_blank" class="btn primary-btn">LinkedIn</a>
+            <a href="mailto:{{email}}" class="btn secondary-btn">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="profile-pic">
+          <img src="assets/photo.jpeg" alt="Varun Kumar M V" />
+        </div>
+      </div>
+    </div>
+  </section>
 </header>
 
 <main class="container main">
   <!-- About -->
-  <section class="about card">
-    <h2>About Me</h2>
-    <p>
-      Frontend & Mobile Application Developer with 3+ years of experience delivering enterprise-grade Angular web apps
-      and Flutter cross-platform mobile applications. Skilled in building responsive SPAs, secure transaction modules,
-      and multilingual apps with seamless API integrations. Proven track record of publishing production-ready apps on
-      Play Store & App Store (50k+downloads) in finance, healthcare, and e-commerce domains. Adept at working in agile
-      teams, translating requirements into scalable solutions, and optimizing performance for high-traffic applications.
-      <!-- Creative Frontend & Mobile Developer with 3+ years of experience delivering enterprise-grade Flutter and Angular applications. Focused on clean architecture, high performance, and delightful UI. -->
-    </p>
+  <section class="about-card">
+    <h2>🚀 About Me: The Digital Impact Architect</h2>
+    <blockquote>
+      I don't just build applications; I architect digital experiences that drive measurable business outcomes.
+    </blockquote>
+
+    <div class="value-prop">
+      With 3+ years in the trenches, I specialize in transforming complex requirements into polished, high-performance
+      Angular Web Apps and native-quality Flutter Cross-Platform Mobile Solutions.
+    </div>
+
+    <h3>My Core Value Proposition:</h3>
+    <ul class="key-points">
+      <li>From Code to Scale: Expert in delivering enterprise-grade solutions across Finance, Healthcare, and E-commerce
+        domains—fields where security, compliance, and reliability are non-negotiable.</li>
+      <li>Proven Market Success: Direct contributor to applications that have achieved 50,000+ public store downloads
+        across the Play Store and App Store, demonstrating an ability to build for mass adoption and scale.</li>
+      <li>The Full Spectrum: Skilled in the entire application lifecycle, from implementing responsive Single Page
+        Architectures (SPAs) and bulletproof secure transaction modules to enabling global reach with multilingual
+        support and seamless, high-speed API integrations.</li>
+    </ul>
+
+    <p>My ultimate goal is performance: translating agile mandates into scalable, clean code while proactively
+      optimizing applications to handle high-traffic loads without a drop in user experience.</p>
   </section>
 
   <!-- Projects -->
-  <section class="projects card">
+  <!-- <section class="projects card">
     <h2>Featured Projects</h2>
     <div class="project-grid">
       <article class="project" *ngFor="let p of projects">
@@ -46,10 +120,24 @@
         <p class="desc">{{p.desc}}</p>
       </article>
     </div>
+  </section> -->
+
+  <section id="projects" class="projects card">
+    <h2>🏆 Featured Projects & Technical Deep Dives</h2>
+    <div class="project-grid">
+      <article class="project" *ngFor="let p of projects">
+        <span class="project-type">{{p.type}}</span>
+        <h3>{{p.name}}</h3>
+        <p class="tech">{{p.tech}}</p>
+        <ul class="desc-list">
+          <li *ngFor="let d of p.desc">{{d}}</li>
+        </ul>
+      </article>
+    </div>
   </section>
 
   <!-- Skills -->
-  <section class="skills card">
+  <!-- <section class="skills card">
     <h2>Skills</h2>
     <div class="skills-grid">
       <div *ngFor="let category of ['mobile','web','backend','tools']">
@@ -61,10 +149,26 @@
         </ul>
       </div>
     </div>
+  </section> -->
+
+  <section id="skills" class="skills card">
+    <h2>🛠️ Core Technical Arsenal</h2>
+    <p class="skills-intro">My expertise spans the full stack, specializing in high-performance state management and
+      scalable component architecture.</p>
+    <div class="skills-grid">
+      <div class="skill-category" *ngFor="let category of Object.keys(skills)">
+        <h4>{{ category }}</h4>
+        <ul>
+          <li *ngFor="let skill of skills[category]">
+            <span class="skill-badge">{{skill.name}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- Experience -->
-  <section class="experience card">
+  <!-- <section class="experience card">
     <h2>Experience</h2>
     <div *ngFor="let exp of experience">
       <h3>{{exp.role}} - {{exp.company}}</h3>
@@ -73,15 +177,74 @@
         <li *ngFor="let bullet of exp.bullets">{{bullet}}</li>
       </ul>
     </div>
+  </section> -->
+
+  <section id="experience" class="experience card">
+    <h2>💼 Professional Journey</h2>
+    <div class="exp-entry" *ngFor="let exp of experience">
+      <h3>{{exp.role}}</h3>
+      <div class="company-details">
+        <p class="company">{{exp.company}}</p>
+        <p class="tenure">{{exp.tenure}}</p>
+      </div>
+      <ul class="achievements-list">
+        <li *ngFor="let bullet of exp.bullets">{{bullet}}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Get In Touch -->
+  <section id="getInTouch" class="get-in-touch card">
+    <h2>🤝 Ready to Build the Next Big Thing?</h2>
+    <p class="cta-message">
+      Whether you have a groundbreaking idea for a cross-platform mobile app or need a specialist to scale your Angular
+      enterprise system, let's connect. I'm actively seeking challenging projects where **clean architecture** meets
+      **measurable business impact.**
+    </p>
+
+    <div class="contact-methods">
+      <a href="varunkumarsaroj08@gmail.com" class="btn email-btn">
+        Send an Email ✉️
+      </a>
+      <a href="linkedin" target="_blank" class="btn linkedin-btn">
+        Connect on LinkedIn
+      </a>
+      <a href="github" target="_blank" class="github-link">
+        View My Codebase on GitHub
+      </a>
+    </div>
+
+    <p class="final-note">
+      I typically respond to inquiries within 24 hours.
+    </p>
   </section>
 
   <!-- Education -->
-  <section class="education card">
+  <!-- <section class="education card">
     <h2>Education</h2>
     <p>{{education.degree}}, {{education.institute}} ({{education.year}}) | CGPA: {{education.cgpa}}</p>
+  </section> -->
+  <section class="education card">
+    <h2>🎓 Education & Certification</h2>
+    <div class="education-entry">
+      <p class="degree-info">
+        <span class="degree">{{education.degree}}</span>
+        —
+        <span class="institute">{{education.institute}}</span>
+        <span class="year-tenure">({{education.year}})</span>
+      </p>
+      <span class="cgpa-highlight">CGPA: **{{education.cgpa}}**</span>
+    </div>
   </section>
+
 </main>
 
-<footer class="footer">
-  Designed & Developed by {{name}} © 2025
+<footer class="portfolio-footer">
+  <p class="copyright">
+    Designed & Developed by **{{name}}** | © 2025
+  </p>
+  <div class="social-links">
+    <a href="linkedin" aria-label="LinkedIn">🔗</a>
+    <a href="github" aria-label="GitHub">💻</a>
+  </div>
 </footer>
