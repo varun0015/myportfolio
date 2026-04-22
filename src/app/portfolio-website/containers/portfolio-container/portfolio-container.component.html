@@ -1,0 +1,313 @@
+<!-- PORTFOLIO CONTENT - All Sections -->
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi there! 👋</p>
+        <h1 class="hero-title">{{ personalInfo.title }}</h1>
+        <p class="hero-subtitle">{{ personalInfo.subtitle }}</p>
+        <p class="hero-description">{{ personalInfo.location }}</p>
+        <div class="hero-ctas">
+          <button class="primary-btn" (click)="scrollToSection('projects')">View My Work</button>
+          <button class="secondary-btn" (click)="scrollToSection('contact')">Get In Touch</button>
+        </div>
+        <div class="social-links">
+          <a [href]="personalInfo.github" target="_blank" rel="noopener">GitHub</a>
+          <a [href]="personalInfo.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+          <a [href]="personalInfo.leetcode" target="_blank" rel="noopener">LeetCode</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/photo.jpeg" alt="Varun Kumar" class="profile-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Enterprise Angular Specialist</h3>
+        <p>I'm a Senior Software Engineer with 3+ years of experience building secure, scalable Angular applications in the banking and fintech sectors. My focus is on enterprise architecture, clean code, and secure authentication systems.</p>
+        <div class="about-focus">
+          <div class="focus-item">✓ Enterprise Angular Architecture</div>
+          <div class="focus-item">✓ Secure Authentication Systems (Keycloak, SAML)</div>
+          <div class="focus-item">✓ Modular Component Design</div>
+          <div class="focus-item">✓ Performance Optimization</div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Companies</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Major Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Angular Focus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div *ngFor="let category of getSkillCategories()" class="skills-category">
+        <h3>{{ category }}</h3>
+        <div class="skills-list">
+          <div *ngFor="let skill of skillCategories[category]" class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card">
+        <div class="project-header">
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-type">{{ project.type }}</p>
+        </div>
+        <p class="project-company">{{ project.company }} • {{ project.tenure }}</p>
+        <p class="project-description">{{ project.description }}</p>
+        <div class="project-tech">
+          <strong>Tech Stack:</strong> {{ project.tech }}
+        </div>
+        <ul class="project-highlights">
+          <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+        </ul>
+        <p class="project-impact">{{ project.impact }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK SECTION -->
+<section id="tech-stack" class="tech-stack">
+  <div class="container">
+    <h2 class="section-title">Technology Stack</h2>
+    <div class="tech-categories">
+      <div class="tech-category">
+        <h3>Frontend</h3>
+        <div class="tech-list">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">RxJS</span>
+          <span class="tech-badge">HTML5</span>
+          <span class="tech-badge">CSS3/SCSS</span>
+          <span class="tech-badge">Angular Material</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <h3>State & Architecture</h3>
+        <div class="tech-list">
+          <span class="tech-badge">Reactive Forms</span>
+          <span class="tech-badge">SPA Architecture</span>
+          <span class="tech-badge">Component Design Patterns</span>
+          <span class="tech-badge">Lazy Loading</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <h3>Security</h3>
+        <div class="tech-list">
+          <span class="tech-badge">Keycloak IAM</span>
+          <span class="tech-badge">SAML</span>
+          <span class="tech-badge">RBAC</span>
+          <span class="tech-badge">REST API Integration</span>
+        </div>
+      </div>
+      <div class="tech-category">
+        <h3>DevOps & Tools</h3>
+        <div class="tech-list">
+          <span class="tech-badge">Git/Bitbucket</span>
+          <span class="tech-badge">CI/CD Pipelines</span>
+          <span class="tech-badge">Jira</span>
+          <span class="tech-badge">Oracle WebLogic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="experience-timeline">
+      <div *ngFor="let exp of experience" class="experience-item">
+        <h3>{{ exp.role }}</h3>
+        <p class="exp-company">{{ exp.company }}</p>
+        <p class="exp-tenure">{{ exp.tenure }}</p>
+        <ul class="exp-description">
+          <li *ngFor="let highlight of exp.highlights">{{ highlight }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="education-section">
+      <h3 class="education-title">📚 Education</h3>
+      <div class="education-card">
+        <h4>{{ education.degree }}</h4>
+        <p>{{ education.institute }}</p>
+        <p class="edu-meta">{{ education.year }} • CGPA: {{ education.cgpa }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What People Say</h2>
+    <div class="testimonials-grid">
+      <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+        <div class="testimonial-stars">
+          <span *ngFor="let i of [1,2,3,4,5]" class="star">★</span>
+        </div>
+        <p class="testimonial-text">{{ testimonial.text }}</p>
+        <div class="testimonial-author">
+          <strong>{{ testimonial.author }}</strong>
+          <p>{{ testimonial.role }} • {{ testimonial.company }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section id="blog" class="blog">
+  <div class="container">
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="blog-grid">
+      <div *ngFor="let article of blogArticles" class="blog-card">
+        <div class="blog-meta">
+          <span class="blog-category">{{ article.category }}</span>
+          <span class="blog-date">{{ article.date }}</span>
+        </div>
+        <h3 class="blog-title">{{ article.title }}</h3>
+        <p class="blog-excerpt">{{ article.excerpt }}</p>
+        <div class="blog-footer">
+          <span class="blog-readtime">{{ article.readTime }}</span>
+          <a [href]="article.link" class="blog-link">Read Article →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Work Together</h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <p>I'm always interested in hearing about new projects and opportunities. Whether you have a complex technical challenge or want to collaborate on something exciting, let's connect!</p>
+        
+        <div class="contact-method">
+          <h4>📧 Email</h4>
+          <a [href]="'mailto:' + personalInfo.email">{{ personalInfo.email }}</a>
+        </div>
+        
+        <div class="contact-method">
+          <h4>☎ Phone</h4>
+          <a [href]="'tel:' + personalInfo.phone">{{ personalInfo.phone }}</a>
+        </div>
+        
+        <div class="contact-method">
+          <h4>💬 WhatsApp</h4>
+          <a [href]="'https://wa.me/91' + getPhoneDigits()" target="_blank" rel="noopener">{{ personalInfo.phone }}</a>
+        </div>
+        
+        <div class="contact-method">
+          <h4>🔗 Connect</h4>
+          <div class="social-links-contact">
+            <a [href]="personalInfo.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+            <a [href]="personalInfo.github" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form (ngSubmit)="onContactSubmit(contactForm)" #contactForm="ngForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your Name" 
+                   [(ngModel)]="formData.name" required 
+                   class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Your Email" 
+                   [(ngModel)]="formData.email" required 
+                   class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Subject</label>
+            <select name="subject" 
+                    [(ngModel)]="formData.subject" 
+                    (change)="onSubjectChange(formData.subject)"
+                    required 
+                    class="form-control">
+              <option value="" disabled>Select a subject</option>
+              <option *ngFor="let option of subjectOptions" [value]="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group" *ngIf="showCustomSubject">
+            <label>Custom Subject</label>
+            <input type="text" name="customSubject" placeholder="Please specify..." 
+                   [(ngModel)]="formData.customSubject" required 
+                   class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Your Message" 
+                      [(ngModel)]="formData.message" required 
+                      rows="5"
+                      class="form-control"></textarea>
+          </div>
+
+          <div *ngIf="formSubmitStatus === 'success'" class="success-message">
+            ✓ Thank you! Your message has been sent successfully.
+          </div>
+
+          <button type="submit" class="submit-btn" [disabled]="!contactForm.valid">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

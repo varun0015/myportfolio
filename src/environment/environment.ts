@@ -1,4 +1,9 @@
 export const environment = {
     production: false,
-    mailServiceAccessKey: '2f293102-1e4b-4a69-a812-d8cc160989aa'
+    emailjs: {
+      publicKey: 'z0QqAwlFlM3PN920W', // Get from: https://dashboard.emailjs.com/admin/account
+      serviceId: 'service_sk3pchf', // Get from: https://dashboard.emailjs.com/admin/services
+      templateId: 'template_xz5oeo6', // Get from: https://dashboard.emailjs.com/admin/templates
+      toEmail: 'varunkumarsaroj08@gmail.com' // Replace with your email
+    }
   };

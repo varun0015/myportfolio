@@ -1,0 +1,1478 @@
+// ============================================
+// CLEAN, PROFESSIONAL PORTFOLIO
+// System Dark/Light Mode
+// ============================================
+
+$primary: #2563eb;
+$secondary: #7c3aed;
+$light-bg: #ffffff;
+$light-bg-alt: #f9fafb;
+$light-text: #111827;
+$light-text-muted: #6b7280;
+$light-border: #e5e7eb;
+$dark-bg: #111827;
+$dark-bg-alt: #1f2937;
+$dark-text: #f3f4f6;
+$dark-text-muted: #d1d5db;
+$dark-border: #374151;
+
+// ============================================
+// BASE STYLES
+// ============================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: $light-bg;
+  color: $light-text;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+
+  &.dark-mode {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// ============================================
+// NAVBAR
+// ============================================
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba($light-bg, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $light-border;
+  z-index: 1000;
+  transition: all 0.3s;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba($dark-bg, 0.95);
+    border-bottom-color: $dark-border;
+  }
+
+  .dark-mode & {
+    background: rgba($dark-bg, 0.95);
+    border-bottom-color: $dark-border;
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, $primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: $light-text-muted;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+
+
+  .cta-button {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($primary, 0.3);
+    }
+  }
+}
+
+// ============================================
+// HERO SECTION
+// ============================================
+
+.hero {
+  margin-top: 70px;
+  padding: 80px 0;
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .hero-text {
+    .greeting {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      color: $light-text;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $primary;
+      margin-bottom: 8px;
+    }
+
+    .hero-location {
+      font-size: 1rem;
+      color: $light-text-muted;
+      margin-bottom: 20px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: $light-text-muted;
+      line-height: 1.8;
+      margin-bottom: 30px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+
+      a {
+        color: $light-text-muted;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-text-muted;
+        }
+
+        .dark-mode & {
+          color: $dark-text-muted;
+        }
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+
+    .profile-img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba($primary, 0.15);
+      border: 3px solid $light-border;
+      transition: all 0.3s;
+
+      @media (prefers-color-scheme: dark) {
+        border-color: $dark-border;
+        box-shadow: 0 20px 50px rgba($primary, 0.25);
+      }
+
+      .dark-mode & {
+        border-color: $dark-border;
+        box-shadow: 0 20px 50px rgba($primary, 0.25);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
+// ============================================
+// BUTTONS
+// ============================================
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+
+  &.btn-primary {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba($primary, 0.3);
+    }
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+
+    @media (prefers-color-scheme: dark) {
+      color: #60a5fa;
+      border-color: #60a5fa;
+    }
+
+    .dark-mode & {
+      color: #60a5fa;
+      border-color: #60a5fa;
+    }
+
+    &:hover {
+      background: $primary;
+      color: white;
+    }
+  }
+}
+
+// ============================================
+// SECTIONS
+// ============================================
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (prefers-color-scheme: dark) {
+    -webkit-text-fill-color: unset;
+    background: unset;
+    color: $primary;
+  }
+
+  .dark-mode & {
+    -webkit-text-fill-color: unset;
+    background: unset;
+    color: $primary;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+
+main {
+  section {
+    padding: 80px 0;
+
+    @media (max-width: 768px) {
+      padding: 60px 0;
+    }
+  }
+}
+
+// ============================================
+// ABOUT SECTION
+// ============================================
+
+.about {
+  background: $light-bg;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-alt;
+  }
+
+  .dark-mode & {
+    background: $dark-bg-alt;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .about-text {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: $light-text;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: $light-text-muted;
+      line-height: 1.8;
+      margin-bottom: 20px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      color: $light-text;
+      margin: 25px 0 15px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .about-list {
+      list-style: none;
+
+      li {
+        font-size: 1rem;
+        color: $light-text-muted;
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-text-muted;
+        }
+
+        .dark-mode & {
+          color: $dark-text-muted;
+        }
+
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: $primary;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .about-cta {
+      margin-top: 30px;
+    }
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .stat {
+      background: $light-bg-alt;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid $light-border;
+      text-align: center;
+      transition: all 0.3s;
+
+      @media (prefers-color-scheme: dark) {
+        background: $dark-bg;
+        border-color: $dark-border;
+      }
+
+      .dark-mode & {
+        background: $dark-bg;
+        border-color: $dark-border;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba($primary, 0.1);
+      }
+
+      h4 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: $light-text-muted;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-text-muted;
+        }
+
+        .dark-mode & {
+          color: $dark-text-muted;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// PROJECTS SECTION
+// ============================================
+
+.projects {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card {
+    background: $light-bg;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid $light-border;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .dark-mode & {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: $primary;
+      box-shadow: 0 12px 30px rgba($primary, 0.15);
+    }
+
+    .project-header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid $light-border;
+
+      @media (prefers-color-scheme: dark) {
+        border-bottom-color: $dark-border;
+      }
+
+      .dark-mode & {
+        border-bottom-color: $dark-border;
+      }
+
+      .project-type {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        background: rgba($primary, 0.1);
+        color: $primary;
+        white-space: nowrap;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $light-text;
+      padding: 20px 20px 0;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .project-company {
+      font-size: 0.95rem;
+      color: $primary;
+      font-weight: 600;
+      padding: 5px 20px;
+    }
+
+    .project-description,
+    .project-tech,
+    .project-highlights {
+      padding: 0 20px;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      color: $light-text;
+      line-height: 1.6;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+
+      strong {
+        color: $light-text;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-text;
+        }
+
+        .dark-mode & {
+          color: $dark-text;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          margin-bottom: 8px;
+          padding-left: 20px;
+          position: relative;
+
+          &::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .project-footer {
+      padding: 20px;
+      border-top: 1px solid $light-border;
+
+      @media (prefers-color-scheme: dark) {
+        border-top-color: $dark-border;
+      }
+
+      .dark-mode & {
+        border-top-color: $dark-border;
+      }
+
+      .project-link {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// TECH STACK SECTION
+// ============================================
+
+.skills {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .skill-category {
+    background: $light-bg;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid $light-border;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    .dark-mode & {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $primary;
+      margin-bottom: 20px;
+      border-bottom: 2px solid $primary;
+      padding-bottom: 10px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skill-item {
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        .skill-name {
+          font-weight: 600;
+          color: $light-text;
+          font-size: 0.95rem;
+
+          @media (prefers-color-scheme: dark) {
+            color: $dark-text;
+          }
+
+          .dark-mode & {
+            color: $dark-text;
+          }
+        }
+
+        .skill-level {
+          color: $primary;
+          font-weight: 700;
+          font-size: 0.9rem;
+        }
+      }
+
+      .skill-bar {
+        height: 8px;
+        background: $light-border;
+        border-radius: 4px;
+        overflow: hidden;
+
+        @media (prefers-color-scheme: dark) {
+          background: $dark-border;
+        }
+
+        .dark-mode & {
+          background: $dark-border;
+        }
+
+        .skill-fill {
+          height: 100%;
+          background: linear-gradient(90deg, $primary, $secondary);
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.tech-stack {
+  background: $light-bg;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-alt;
+  }
+
+  .dark-mode & {
+    background: $dark-bg-alt;
+  }
+
+  .tech-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+
+  .tech-category {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $light-text;
+      margin-bottom: 20px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-badge {
+      background: linear-gradient(135deg, $primary, $secondary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba($primary, 0.3);
+      }
+    }
+  }
+}
+
+// ============================================
+// EXPERIENCE SECTION
+// ============================================
+
+.experience {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .experience-item {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: $light-bg;
+    border-radius: 10px;
+    border-left: 4px solid $primary;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-alt;
+    }
+
+    .dark-mode & {
+      background: $dark-bg-alt;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $light-text;
+      margin-bottom: 5px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .exp-company {
+      font-size: 1rem;
+      color: $primary;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .exp-tenure {
+      font-size: 0.9rem;
+      color: $light-text;
+      margin-bottom: 15px;
+      font-weight: 500;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .exp-description {
+      font-size: 0.95rem;
+      color: $light-text;
+      line-height: 1.7;
+      font-weight: 500;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+  }
+}
+
+// ============================================
+// TESTIMONIALS SECTION
+// ============================================
+
+.testimonials {
+  background: $light-bg;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-alt;
+  }
+
+  .dark-mode & {
+    background: $dark-bg-alt;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .testimonial-card {
+    background: $light-bg-alt;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid $light-border;
+    transition: all 0.3s;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg;
+      border-color: $dark-border;
+    }
+
+    .dark-mode & {
+      background: $dark-bg;
+      border-color: $dark-border;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary;
+      box-shadow: 0 10px 25px rgba($primary, 0.1);
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: $light-text-muted;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-style: italic;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: $light-text;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .author-role {
+      font-size: 0.9rem;
+      color: $light-text-muted;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+  }
+}
+
+// ============================================
+// BLOG SECTION
+// ============================================
+
+.blog {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .blog-card {
+    background: $light-bg;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid $light-border;
+    transition: all 0.3s;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    .dark-mode & {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary;
+      box-shadow: 0 10px 25px rgba($primary, 0.1);
+    }
+
+    .blog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+
+      .blog-category {
+        background: rgba($primary, 0.1);
+        color: $primary;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      .blog-date {
+        color: $light-text-muted;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-text-muted;
+        }
+
+        .dark-mode & {
+          color: $dark-text-muted;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $light-text;
+      margin-bottom: 10px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: $light-text-muted;
+      line-height: 1.6;
+      margin-bottom: 15px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+
+    .blog-read-time {
+      font-size: 0.85rem;
+      color: $light-text-muted;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text-muted;
+      }
+
+      .dark-mode & {
+        color: $dark-text-muted;
+      }
+    }
+  }
+}
+
+// ============================================
+// EDUCATION SECTION
+// ============================================
+
+.education {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+
+  .dark-mode & {
+    background: $dark-bg;
+  }
+
+  .education-card {
+    background: $light-bg;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid $light-border;
+    border-left: 4px solid $primary;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    .dark-mode & {
+      background: $dark-bg-alt;
+      border-color: $dark-border;
+    }
+
+    .degree {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $light-text;
+      margin-bottom: 8px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+
+    .institute {
+      color: $primary;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .cgpa {
+      font-size: 0.95rem;
+      color: $light-text;
+      margin-bottom: 5px;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+    }
+  }
+}
+
+// ============================================
+// CONTACT SECTION
+// ============================================
+
+.contact {
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: white;
+  padding: 100px 0;
+
+  .section-title {
+    color: white;
+    -webkit-text-fill-color: unset;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .contact-info {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .contact-method {
+      margin-bottom: 30px;
+
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1rem;
+        opacity: 0.95;
+        margin: 0;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 0.8;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    @media (prefers-color-scheme: dark) {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .dark-mode & {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-weight: 600;
+        color: $light-text;
+        margin-bottom: 8px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid $light-border;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 1rem;
+        background: white;
+        color: $light-text;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+          box-shadow: 0 0 0 3px rgba($primary, 0.15);
+        }
+      }
+
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232563eb' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 40px;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    }
+
+    .success-message {
+      background: #d1fae5;
+      color: #065f46;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      text-align: center;
+      animation: slideDown 0.3s ease-out;
+
+      @media (prefers-color-scheme: dark) {
+        background: rgba(16, 185, 129, 0.15);
+        color: #6ee7b7;
+      }
+
+      .dark-mode & {
+        background: rgba(16, 185, 129, 0.15);
+        color: #6ee7b7;
+      }
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, $primary, $secondary);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+.footer {
+  background: $light-text;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+
+  @media (prefers-color-scheme: dark) {
+    background: #000;
+  }
+
+  .dark-mode & {
+    background: #000;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar .cta-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  main section {
+    padding: 40px 0;
+  }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

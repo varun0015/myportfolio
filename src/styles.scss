@@ -35,5 +35,223 @@ $myportfolio-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// ============================================
+// PORTFOLIO GLOBAL THEME
+// ============================================
+
+// Color Variables
+$primary: #2563eb;
+$secondary: #7c3aed;
+$light-bg: #ffffff;
+$light-bg-alt: #f9fafb;
+$light-text: #111827;
+$light-text-muted: #6b7280;
+$light-border: #e5e7eb;
+$dark-bg: #111827;
+$dark-bg-alt: #1f2937;
+$dark-text: #f3f4f6;
+$dark-text-muted: #d1d5db;
+$dark-border: #374151;
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: $light-bg;
+  color: $light-text;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+
+  &.dark-mode {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+}
+
+// Global Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Main content wrapper for fixed navbar
+main {
+  margin-top: 70px;
+}
+
+// ============================================
+// GLOBAL UTILITY STYLES
+// ============================================
+
+// Section padding
+section {
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $secondary;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #60a5fa;
+    
+    &:hover {
+      color: #93c5fd;
+    }
+  }
+
+  .dark-mode & {
+    color: #60a5fa;
+    
+    &:hover {
+      color: #93c5fd;
+    }
+  }
+}
+
+// Buttons (global)
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+// Lists
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+// Code blocks
+code {
+  background: $light-bg-alt;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-alt;
+  }
+
+  .dark-mode & {
+    background: $dark-bg-alt;
+  }
+}
+
+// Selection color
+::selection {
+  background: $primary;
+  color: white;
+}
+
+::-moz-selection {
+  background: $primary;
+  color: white;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $light-bg-alt;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: $light-border;
+  border-radius: 6px;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-border;
+  }
+
+  &:hover {
+    background: $light-text-muted;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-text-muted;
+    }
+  }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: #0066cc;
+  }
+
+  button {
+    display: none;
+  }
+}

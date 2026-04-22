@@ -1,0 +1,124 @@
+$primary: #2563eb;
+$secondary: #7c3aed;
+$light-bg: #ffffff;
+$light-border: #e5e7eb;
+$light-text: #111827;
+$dark-bg: #111827;
+$dark-bg-alt: #1f2937;
+$dark-text: #f3f4f6;
+$dark-border: #374151;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba($light-bg, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $light-border;
+  z-index: 1000;
+  transition: all 0.3s;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba($dark-bg, 0.95);
+    border-bottom-color: $dark-border;
+  }
+
+  .dark-mode & {
+    background: rgba($dark-bg, 0.95);
+    border-bottom-color: $dark-border;
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, $primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $light-text;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-text;
+      }
+
+      .dark-mode & {
+        color: $dark-text;
+      }
+
+      &.active,
+      &:hover {
+        color: $primary;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: $primary;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba($primary, 0.3);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      display: none;
+    }
+
+    .cta-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+}

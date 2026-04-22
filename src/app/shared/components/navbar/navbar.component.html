@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo" (click)="onLogoClick()">VK</div>
+    <div class="nav-links">
+      <a *ngFor="let section of sections" 
+         [class.active]="section === activeSection"
+         (click)="onNavClick(section)">
+        {{ section | titlecase }}
+      </a>
+    </div>
+    <button class="cta-button" (click)="onCTAClick()">Let's Connect</button>
+  </div>
+</nav>

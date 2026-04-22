@@ -1,4 +1,9 @@
 export const environment = {
     production: true,
-    mailServiceAccessKey: '2f293102-1e4b-4a69-a812-d8cc160989aa'
+    emailjs: {
+      publicKey: 'z0QqAwlFlM3PN920W',
+      serviceId: 'service_sk3pchf',
+      templateId: 'template_xz5oeo6',
+      toEmail: 'varunkumarsaroj08@gmail.com'
+    }
   };
