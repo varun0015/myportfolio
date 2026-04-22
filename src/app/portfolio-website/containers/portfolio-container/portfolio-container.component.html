@@ -6,7 +6,7 @@
     <div class="hero-content">
       <div class="hero-text">
         <p class="hero-greeting">Hi there! 👋</p>
-        <h1 class="hero-title">{{ personalInfo.title }}</h1>
+        <h1 class="hero-title"><span class="hero-name">Varun Kumar M V</span> - {{ personalInfo.title }}</h1>
         <p class="hero-subtitle">{{ personalInfo.subtitle }}</p>
         <p class="hero-description">{{ personalInfo.location }}</p>
         <div class="hero-ctas">
@@ -35,10 +35,10 @@
         <h3>Enterprise Angular Specialist</h3>
         <p>I'm a Senior Software Engineer with 3+ years of experience building secure, scalable Angular applications in the banking and fintech sectors. My focus is on enterprise architecture, clean code, and secure authentication systems.</p>
         <div class="about-focus">
-          <div class="focus-item">✓ Enterprise Angular Architecture</div>
-          <div class="focus-item">✓ Secure Authentication Systems (Keycloak, SAML)</div>
-          <div class="focus-item">✓ Modular Component Design</div>
-          <div class="focus-item">✓ Performance Optimization</div>
+          <div class="focus-item">Enterprise Angular Architecture</div>
+          <div class="focus-item">Secure Authentication Systems (Keycloak, SAML)</div>
+          <div class="focus-item">Modular Component Design</div>
+          <div class="focus-item">Performance Optimization</div>
         </div>
       </div>
       <div class="about-stats">
@@ -68,9 +68,9 @@
   <div class="container">
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
-      <div *ngFor="let category of getSkillCategories()" class="skills-category">
+      <div *ngFor="let category of getSkillCategories()" class="skill-category">
         <h3>{{ category }}</h3>
-        <div class="skills-list">
+        <div class="skill-list">
           <div *ngFor="let skill of skillCategories[category]" class="skill-item">
             <div class="skill-header">
               <span class="skill-name">{{ skill.name }}</span>
@@ -248,7 +248,7 @@
         <div class="contact-method">
           <h4>🔗 Connect</h4>
           <div class="social-links-contact">
-            <a [href]="personalInfo.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+            <a [href]="personalInfo.linkedin" target="_blank" rel="noopener">LinkedIn</a> |
             <a [href]="personalInfo.github" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>

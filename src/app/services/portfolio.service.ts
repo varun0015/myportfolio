@@ -76,7 +76,7 @@ export class PortfolioService {
     phone: '+91 9620208254',
     github: 'https://github.com/varun-816?tab=repositories',
     linkedin: 'https://www.linkedin.com/in/varun-kumar-350854172',
-    leetcode: 'https://leetcode.com/varun-kumar-mv'
+    leetcode: 'https://leetcode.com/u/varun_816'
   };
 
   private readonly skills: { [key: string]: Skill[] } = {
