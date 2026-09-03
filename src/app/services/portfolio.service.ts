@@ -70,7 +70,7 @@ export class PortfolioService {
   private readonly personalInfo: PersonalInfo = {
     name: 'Varun Kumar M V',
     title: 'Senior Software Engineer',
-    subtitle: 'Enterprise Angular Developer | Secure Web Applications | 3+ Years',
+    subtitle: 'Enterprise Angular Developer | Secure Web Applications | 4.4+ Years',
     location: 'Bengaluru, Karnataka, India',
     email: 'varunkumarsaroj08@gmail.com',
     phone: '+91 9620208254',
@@ -131,20 +131,20 @@ export class PortfolioService {
     },
     {
       id: 2,
-      name: 'MICR – Banking Data Processing System',
+      name: 'CyM – Currency Management System (NGCB)',
       company: 'ReBIT (Reserve Bank Information Technology)',
       tenure: 'Nov 2025 – Present',
-      tech: 'Angular | TypeScript | SAML | Enterprise APIs | Oracle WebLogic',
-      description: 'Banking application for transaction validation and secure data processing',
+      tech: 'Angular | TypeScript | Java Spring Boot | SAML | Oracle WebLogic | ELK Stack',
+      description: 'Currency management platform built under RBI\'s Next Gen Core Banking (NGCB) initiative',
       highlights: [
-        'Developed Angular workflows for banking data processing and validation systems',
-        'Integrated secure SAML-based authentication with enterprise identity systems',
-        'Built responsive dashboards and UI modules for transaction validation',
-        'Worked with backend teams to integrate APIs and ensure secure data processing',
-        'Supported enterprise deployments on Oracle WebLogic environments'
+        'Built Angular workflows for Inward, Outward, and Indent remittance flows across the currency chest ecosystem',
+        'Modeled role-based screens for the Currency Chest, Linked Officer, Issue Officer, and DCM hierarchy',
+        'Implemented Maker, Checker, and Co-Officer approval pipelines to enforce four-eyes compliance',
+        'Developed Direct Remittance and Remittance-from-IO flows for RES and FNV user roles',
+        'Integrated SAML authentication and partnered on Spring Boot APIs for validation, state transitions, and audit logging'
       ],
-      type: 'Banking Application',
-      impact: 'RBI Enterprise System'
+      type: 'NGCB Enterprise Banking Platform',
+      impact: 'RBI Currency Management System'
     },
     {
       id: 3,
@@ -189,6 +189,7 @@ export class PortfolioService {
       tenure: 'Nov 2025 – Present',
       highlights: [
         'Working on enterprise platforms for the Reserve Bank of India',
+        'Contributing to the CyM currency management platform under the Next Gen Core Banking (NGCB) initiative',
         'Building secure Angular applications and integrating with backend services',
         'Developing modular components for centralized master data management',
         'Implementing dynamic maker-checker workflows for data validation and approval',
